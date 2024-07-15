@@ -42,7 +42,7 @@ intents = [
     {
         "tag": "age",
         "patterns": ["How old are you?", "What is your age?", "Tell me your age"],
-        "responses": ["I am an AI created by OpenAI, so I don't have an age like humans."]
+        "responses": ["I am an AI created by MAROURI, so I don't have an age like humans."]
     },
     {
         "tag": "weather",
@@ -68,7 +68,7 @@ intents = [
 
 # Create the vectorizer and classifier
 vectorizer = TfidfVectorizer()
-clf = LogisticRegression(random_state=0, max_iter=10000)
+Model = LogisticRegression(random_state=0, max_iter=10000)
 
 # Preprocess the data
 tags = []
@@ -81,11 +81,11 @@ for intent in intents:
 # Training the model
 x = vectorizer.fit_transform(patterns)
 y = tags
-clf.fit(x, y)
+Model.fit(x, y)
 
 def chatbot(input_text):
     input_text = vectorizer.transform([input_text])
-    tag = clf.predict(input_text)[0]
+    tag = Model.predict(input_text)[0]
     for intent in intents:
         if intent['tag'] == tag:
             if tag == "time":
