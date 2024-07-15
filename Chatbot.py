@@ -66,11 +66,17 @@ intents = [
     }
 ]
 
+<<<<<<< HEAD
 # Create the vectorizer and classifier
 vectorizer = TfidfVectorizer()
 Model = LogisticRegression(random_state=0, max_iter=10000)
+=======
+>>>>>>> ea5ccaac496eafe939b58ccaacb61c1dc1c5e874
 
-# Preprocess the data
+vectorizer = TfidfVectorizer()
+Model = LogisticRegression(random_state=0, max_iter=10000)
+
+
 tags = []
 patterns = []
 for intent in intents:
@@ -78,7 +84,7 @@ for intent in intents:
         tags.append(intent['tag'])
         patterns.append(pattern)
 
-# Training the model
+
 x = vectorizer.fit_transform(patterns)
 y = tags
 Model.fit(x, y)
@@ -96,10 +102,10 @@ def chatbot(input_text):
             return response
     return "I'm not sure I understand. Could you please rephrase that?"
 def get_weather():
-    api_key = "06d3bc87e14dd7a8da3cf6d542828696"  # Replace with your actual API key
+    api_key = "06d3bc87e14dd7a8da3cf6d542828696"  
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
-    city_name = "Safi"  # Replace with the name of your city, e.g., "London"
-    complete_url = base_url + "q=" + city_name + "&appid=" + api_key + "&units=metric"  # Added units=metric for Celsius temperature
+    city_name = "Safi"  
+    complete_url = base_url + "q=" + city_name + "&appid=" + api_key + "&units=metric"  
     response = requests.get(complete_url)
     data = response.json()
     if data["cod"] != "404":
