@@ -66,12 +66,10 @@ intents = [
     }
 ]
 
-<<<<<<< HEAD
-# Create the vectorizer and classifier
+
 vectorizer = TfidfVectorizer()
 Model = LogisticRegression(random_state=0, max_iter=10000)
-=======
->>>>>>> ea5ccaac496eafe939b58ccaacb61c1dc1c5e874
+
 
 vectorizer = TfidfVectorizer()
 Model = LogisticRegression(random_state=0, max_iter=10000)
