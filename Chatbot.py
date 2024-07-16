@@ -100,9 +100,9 @@ def chatbot(input_text):
             return response
     return "I'm not sure I understand. Could you please rephrase that?"
 def get_weather():
-    api_key = "06d3bc87e14dd7a8da3cf6d542828696"  
-    base_url = "http://api.openweathermap.org/data/2.5/weather?"
-    city_name = "Safi"  
+    api_key = "put_your_key_here"  
+    base_url = "API_website"
+    city_name = "CITY"  
     complete_url = base_url + "q=" + city_name + "&appid=" + api_key + "&units=metric"  
     response = requests.get(complete_url)
     data = response.json()
