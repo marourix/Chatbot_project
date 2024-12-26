@@ -25,6 +25,5 @@ To add new intents and responses:
 
 
 
-![Example Image](Image/Screenshot 2024-07-15 195200.png)
 
 
